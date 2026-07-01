@@ -1,0 +1,130 @@
+.nosotros-section {
+  width: 100%;
+  background: linear-gradient(to bottom, $primary-color 0%, mix($primary-color, $secondary-color, 50%) 50%, $secondary-color 100%);
+  padding: 60px 20px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+
+  .nosotros-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hero-banner {
+    background-color: $highlight-color;
+    border-radius: 40px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .hero-text {
+      max-width: 55%;
+      color: #333;
+
+      .badge {
+        background-color: #ffffff;
+        color: $accent-color;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      h2 {
+        font-size: 36px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-weight: normal;
+        strong { color: #ffffff; font-weight: bold; }
+      }
+
+      p { font-size: 16px; line-height: 1.5; color: #444; }
+    }
+
+    .hero-image-container {
+      width: 35%;
+      text-align: right;
+      .hero-circle-img {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #ffffff;
+      }
+    }
+  }
+
+  .history-card {
+    background-color: $formbg;
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+
+    .history-info {
+      width: 45%;
+      h3 { font-size: 28px; margin-bottom: 15px; color: #222; }
+      p { color: #555; line-height: 1.6; font-size: 15px; }
+    }
+
+    .vertical-divider {
+      width: 2px;
+      height: 100px;
+      background-color: #ddd;
+      margin: 0 40px;
+    }
+
+    .stats-grid {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+
+      .stat-box {
+        text-align: center;
+        .number { font-size: 38px; font-weight: bold; display: block; }
+        .label { font-size: 13px; color: #666; margin-top: 5px; display: block; }
+
+        .cyan-text { color: $accent-color; }
+        .pink-text { color: $tertiary-color; }
+        .yellow-text { color: darken($highlight-color, 15%); }
+      }
+    }
+  }
+
+  .values-block {
+    text-align: center;
+
+    .values-title {
+      font-size: 28px;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
+    .values-cards-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+
+      .value-card {
+        background-color: $cardbg;
+        border-radius: 25px;
+        padding: 30px 20px;
+        flex: 1;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+
+        .icon-holder {
+          font-size: 35px;
+          margin-bottom: 15px;
+        }
+
+        h4 { font-size: 22px; margin-bottom: 10px; color: #222; }
+        p { color: #666; font-size: 14px; line-height: 1.4; }
+      }
+    }
+  }
+}
