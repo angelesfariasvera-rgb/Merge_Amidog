@@ -1,0 +1,45 @@
+// Estilo para la etiqueta pequeña de arriba
+.etiqueta-veterinaria {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+// Estilos de los Botones
+.botones-banner {
+    display: flex;
+    gap: 15px;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+
+    &-primary {
+        background-color: #008080; // Verde azulado
+        color: white;
+
+        &:hover {
+            background-color: #005a5a;
+        }
+    }
+
+    &-secondary {
+        background-color: white;
+        color: #ff9800;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+}
