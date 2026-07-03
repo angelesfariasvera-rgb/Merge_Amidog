@@ -1,0 +1,118 @@
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 13px;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 37, 37, 0.16);
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #00a896 0%, #0fa29c 100%);
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #fcfcfc;
+  color: #000000;
+}
+
+.hero {
+  background-color: $primary-color;
+  text-align: center;
+  padding: 80px 20px;
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 16px;
+
+    span {
+      color: #00a896;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    color: #252525;
+    margin-bottom: 32px;
+  }
+}
+
+.services {
+  padding: 60px 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #252525;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 45px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 26px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(37, 37, 37, 0.15);
+  }
+
+  .icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #252525;
+  }
+
+  p {
+    font-size: 14px;
+    color: #666;
+  }
+}
+
+.cta {
+  background-color: #00a896;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 28px;
+    opacity: 0.9;
+  }
+
+  .btn-secondary {
+    background-color: #fff;
+    color: #00a896;
+  }
+}
