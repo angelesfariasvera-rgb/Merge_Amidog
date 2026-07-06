@@ -3,6 +3,18 @@
 /* =======================================================
    Colores
    ======================================================= */
+/* -------------------------------------------------------
+   Agregados: colores usados en la vista de Inicio
+   NOTA: $teal-color (#00a896) es distinto de $accent-color
+   (#18AA91). Se agrega aparte para no pisar el valor
+   existente; conviene unificar cuando se pueda.
+   ------------------------------------------------------- */
+/* =======================================================
+   Tipografía
+   ======================================================= */
+/* =======================================================
+   Breakpoints
+   ======================================================= */
 /* ===============================================
    CONFIGURACIÓN GENERAL
 ================================================ */
@@ -19,6 +31,9 @@ html {
 body {
   min-width: 320px;
   font-family: "Inter", sans-serif;
+}
+
+body {
   background: #ffb066;
 }
 
@@ -74,7 +89,148 @@ body {
 }
 
 /* ===============================================
-   2. SECCIÓN PRINCIPAL (BANNER)
+   2. FOOTER
+================================================ */
+.footer {
+  width: 100%;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 70px;
+  background: linear-gradient(90deg, #FFF1C0 0%, #fe751f 100%);
+}
+.footer .direccion {
+  color: #252525;
+  font-size: 18px;
+  font-weight: 500;
+}
+.footer .redes-sociales {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ===============================================
+   RESPONSIVE - NAVBAR / FOOTER
+================================================ */
+@media screen and (max-width: 1100px) {
+  .navbar {
+    padding: 0 30px;
+  }
+  .navbar .logo {
+    left: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 85px;
+    padding: 0 20px;
+  }
+  .navbar .links-nav {
+    display: none;
+  }
+  .footer {
+    flex-direction: column;
+    padding: 22px 20px;
+    gap: 14px;
+    text-align: center;
+  }
+}
+/* ===============================================
+   BOTONES (.btn, .btn-primary, .btn-secondary)
+   NOTA: existía una definición duplicada y con
+   estilos distintos en _layout.scss y en este
+   archivo. Se dejó una sola versión (la que
+   coincide con el diseño final del banner).
+================================================ */
+.btn {
+  min-width: 175px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+  border: none;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 37, 37, 0.16);
+}
+.btn-primary {
+  color: #ffffff;
+  background: linear-gradient(90deg, #00a896 0%, #0fa29c 100%);
+}
+.btn-secondary {
+  color: #000000;
+  background: #fcfcfc;
+}
+
+/* ===============================================
+   ETIQUETA / BADGE (.etiqueta-veterinaria)
+   NOTA: mismo caso, había dos versiones distintas.
+   Se conservó la que coincide con lo usado en el
+   banner (fondo blanco + texto turquesa).
+================================================ */
+.etiqueta-veterinaria {
+  display: inline-block;
+  padding: 9px 20px;
+  border-radius: 30px;
+  color: #00a896;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ===============================================
+   TARJETA DE SERVICIO (.tarjeta-servicio)
+================================================ */
+.tarjeta-servicio {
+  min-height: 220px;
+  padding: 20px 25px 30px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 26px;
+  transition: all 0.2s ease;
+}
+.tarjeta-servicio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(37, 37, 37, 0.15);
+}
+.tarjeta-servicio .icono-servicio {
+  width: 63px;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #b5f0f0;
+  font-size: 31px;
+}
+.tarjeta-servicio h3 {
+  margin-top: 20px;
+  color: #252525;
+  font-size: 23px;
+  font-weight: 700;
+}
+.tarjeta-servicio p {
+  margin-top: 16px;
+  color: #252525;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* ===============================================
+   SECCIÓN PRINCIPAL (BANNER)
 ================================================ */
 .seccion-principal {
   position: relative;
@@ -95,16 +251,6 @@ body {
   flex: 1;
   max-width: 50%;
 }
-.seccion-principal .info-banner .etiqueta-veterinaria {
-  display: inline-block;
-  margin-bottom: 22px;
-  padding: 9px 20px;
-  border-radius: 30px;
-  color: #00a896;
-  background: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-}
 .seccion-principal .info-banner h1 {
   color: #252525;
   font-size: 58px;
@@ -116,7 +262,9 @@ body {
   color: #ffffff;
   display: inline-block;
 }
-
+.seccion-principal .info-banner h1 {
+  /* 🐾 Patitas decorativas */
+}
 .seccion-principal .info-banner h1 .patita-izq {
   position: absolute;
   width: 38px;
@@ -130,8 +278,8 @@ body {
   vertical-align: middle;
   width: 38px;
   height: auto;
-  margin-left: -20px; /* Separación de la palabra AmiDog */
-  margin-bottom: -45px; /* Ajuste vertical para que quede abajo */
+  margin-left: -20px;
+  margin-bottom: -45px;
   transform: rotate(160deg);
 }
 .seccion-principal .info-banner p {
@@ -142,37 +290,16 @@ body {
   font-weight: 500;
   line-height: 30px;
 }
+.seccion-principal {
+  /* Espaciado/tamaño de los botones dentro del banner.
+     El componente visual (.btn) vive en _components.scss;
+     esto solo define su disposición en este contexto. */
+}
 .seccion-principal .botones-banner {
   display: flex;
   align-items: center;
   gap: 18px;
   margin-top: 42px;
-}
-.seccion-principal .botones-banner .btn {
-  min-width: 175px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 25px;
-  border: none;
-  border-radius: 13px;
-  font-size: 20px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-.seccion-principal .botones-banner .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(37, 37, 37, 0.16);
-}
-.seccion-principal .botones-banner .btn-primary {
-  color: #ffffff;
-  background: linear-gradient(90deg, #00a896 0%, #0fa29c 100%);
-}
-.seccion-principal .botones-banner .btn-secondary {
-  color: #000000;
-  background: #fcfcfc;
 }
 .seccion-principal .imagen-banner {
   position: relative;
@@ -190,9 +317,64 @@ body {
   -o-object-position: center bottom;
      object-position: center bottom;
 }
+.seccion-principal {
+  /* Círculo con mascotas al frente del banner */
+}
+.seccion-principal .contenedor-mascotas-circulo {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.seccion-principal .contenedor-mascotas-circulo .circulo-blanco-fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+.seccion-principal .contenedor-mascotas-circulo .deco-img-estrella {
+  position: absolute;
+  width: 35px;
+  height: auto;
+  z-index: 3;
+}
+.seccion-principal .contenedor-mascotas-circulo .deco-img-estrella--arriba {
+  top: 25px;
+  left: 45px;
+  transform: rotate(-15deg);
+}
+.seccion-principal .contenedor-mascotas-circulo .deco-img-estrella--abajo {
+  bottom: 140px;
+  right: -25px;
+  width: 40px;
+  transform: rotate(20deg);
+}
+.seccion-principal .contenedor-mascotas-circulo .deco-img-patitas {
+  position: absolute;
+  bottom: 95px;
+  right: -20px;
+  width: 38px;
+  height: auto;
+  z-index: 3;
+  transform: rotate(160deg);
+  filter: brightness(0.3);
+}
+.seccion-principal .contenedor-mascotas-circulo .img-perro-gato {
+  position: relative;
+  z-index: 2;
+  width: 108%;
+  height: auto;
+  bottom: -15px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 
 /* ===============================================
-   3. SECCIÓN DE SERVICIOS
+   SECCIÓN DE SERVICIOS
 ================================================ */
 .seccion-servicios {
   width: calc(100% - 140px);
@@ -219,78 +401,11 @@ body {
   gap: 45px;
   margin-top: 48px;
 }
-.seccion-servicios .tarjeta-servicio {
-  min-height: 220px;
-  padding: 20px 25px 30px;
-  text-align: center;
-  background: #ffffff;
-  border-radius: 26px;
-  transition: all 0.2s ease;
-}
-.seccion-servicios .tarjeta-servicio:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(37, 37, 37, 0.15);
-}
-.seccion-servicios .tarjeta-servicio .icono-servicio {
-  width: 63px;
-  height: 63px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  border-radius: 50%;
-  background: #b5f0f0;
-  font-size: 31px;
-}
-.seccion-servicios .tarjeta-servicio h3 {
-  margin-top: 20px;
-  color: #252525;
-  font-size: 23px;
-  font-weight: 700;
-}
-.seccion-servicios .tarjeta-servicio p {
-  margin-top: 16px;
-  color: #252525;
-  font-size: 17px;
-  font-weight: 500;
-}
 
 /* ===============================================
-   4. FOOTER
-================================================ */
-.footer {
-  width: 100%;
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 70px;
-  background: linear-gradient(90deg, #fff1c0 0%, #fe751f 100%);
-}
-.footer .direccion {
-  color: #252525;
-  font-size: 18px;
-  font-weight: 500;
-}
-.footer .redes-sociales {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-/* ===============================================
-   RESPONSIVE DESIGN (TABLET & CELULARES)
+   RESPONSIVE - VISTA INICIO
 ================================================ */
 @media screen and (max-width: 1100px) {
-  .navbar {
-    padding: 0 30px;
-  }
-  .navbar .logo {
-    left: 20px;
-  }
   .seccion-principal {
     width: calc(100% - 50px);
   }
@@ -316,13 +431,6 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
-  .navbar {
-    height: 85px;
-    padding: 0 20px;
-  }
-  .navbar .links-nav {
-    display: none;
-  }
   .seccion-principal {
     width: calc(100% - 30px);
     margin-top: 20px;
@@ -362,103 +470,4 @@ body {
   .seccion-servicios .bloque-tarjetas {
     grid-template-columns: 1fr;
   }
-  .footer {
-    flex-direction: column;
-    padding: 22px 20px;
-    gap: 14px;
-    text-align: center;
-  }
-}
-.contenedor-mascotas-circulo {
-  position: relative;
-  width: 440px;
-  height: 440px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-.contenedor-mascotas-circulo .circulo-blanco-fondo {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ffffff;
-  border-radius: 50%; /* Círculo perfecto */
-  z-index: 1;
-}
-.contenedor-mascotas-circulo .deco-img-estrella {
-  position: absolute;
-  width: 35px;
-  height: auto;
-  z-index: 3;
-}
-.contenedor-mascotas-circulo .deco-img-estrella--arriba {
-  top: 25px;
-  left: 45px;
-  transform: rotate(-15deg);
-}
-.contenedor-mascotas-circulo .deco-img-estrella--abajo {
-  bottom: 140px;
-  right: -25px;
-  width: 40px; /* Un pelín más grande abajo */
-  transform: rotate(20deg);
-}
-.contenedor-mascotas-circulo .deco-img-patitas {
-  position: absolute;
-  bottom: 95px;
-  right: -20px;
-  width: 38px; /* Ajustamos la escala para que sean mini patitas */
-  height: auto;
-  z-index: 3;
-  transform: rotate(160deg);
-  filter: brightness(0.3); /* 💡 Truco opcional: las oscurece si tu PNG original es muy claro */
-}
-.contenedor-mascotas-circulo .img-perro-gato {
-  position: relative;
-  z-index: 2; /* Obliga a los animales a estar en frente */
-  width: 108%; /* Un poco más grande para el efecto 3D */
-  height: auto;
-  bottom: -15px; /* Hace que "salgan" y pisen fuera del círculo abajo */
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-.etiqueta-veterinaria {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.botones-banner {
-  display: flex;
-  gap: 15px;
-}
-@media (max-width: 768px) {
-  .botones-banner {
-    justify-content: center;
-  }
-}
-
-.btn {
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-.btn-primary {
-  background-color: #008080;
-  color: white;
-}
-.btn-primary:hover {
-  background-color: #005a5a;
-}
-.btn-secondary {
-  background-color: white;
-  color: #ff9800;
-}
-.btn-secondary:hover {
-  background-color: #f0f0f0;
 }/*# sourceMappingURL=main.css.map */

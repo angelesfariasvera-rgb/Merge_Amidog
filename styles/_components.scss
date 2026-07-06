@@ -1,45 +1,97 @@
-// Estilo para la etiqueta pequeña de arriba
-.etiqueta-veterinaria {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+@use "variables";
 
-// Estilos de los Botones
-.botones-banner {
-    display: flex;
-    gap: 15px;
-
-    @media (max-width: 768px) {
-        justify-content: center;
-    }
-}
-
+/* ===============================================
+   BOTONES (.btn, .btn-primary, .btn-secondary)
+   NOTA: existía una definición duplicada y con
+   estilos distintos en _layout.scss y en este
+   archivo. Se dejó una sola versión (la que
+   coincide con el diseño final del banner).
+================================================ */
 .btn {
-    padding: 12px 24px;
-    border-radius: 8px;
+    min-width: 175px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+    border: none;
+    border-radius: 13px;
+    font-size: 20px;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(37, 37, 37, 0.16);
+    }
 
     &-primary {
-        background-color: #008080; // Verde azulado
-        color: white;
-
-        &:hover {
-            background-color: #005a5a;
-        }
+        color: variables.$white;
+        background: linear-gradient(90deg, variables.$teal-color 0%, #0fa29c 100%);
     }
 
     &-secondary {
-        background-color: white;
-        color: #ff9800;
+        color: #000000;
+        background: variables.$off-white;
+    }
+}
 
-        &:hover {
-            background-color: #f0f0f0;
-        }
+/* ===============================================
+   ETIQUETA / BADGE (.etiqueta-veterinaria)
+   NOTA: mismo caso, había dos versiones distintas.
+   Se conservó la que coincide con lo usado en el
+   banner (fondo blanco + texto turquesa).
+================================================ */
+.etiqueta-veterinaria {
+    display: inline-block;
+    padding: 9px 20px;
+    border-radius: 30px;
+    color: variables.$teal-color;
+    background: variables.$white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* ===============================================
+   TARJETA DE SERVICIO (.tarjeta-servicio)
+================================================ */
+.tarjeta-servicio {
+    min-height: 220px;
+    padding: 20px 25px 30px;
+    text-align: center;
+    background: variables.$white;
+    border-radius: 26px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(37, 37, 37, 0.15);
+    }
+
+    .icono-servicio {
+        width: 63px;
+        height: 63px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        border-radius: 50%;
+        background: #b5f0f0;
+        font-size: 31px;
+    }
+
+    h3 {
+        margin-top: 20px;
+        color: variables.$text-dark;
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: 16px;
+        color: variables.$text-dark;
+        font-size: 17px;
+        font-weight: 500;
     }
 }
