@@ -93,6 +93,12 @@ body {
         color: variables.$white;
         font-size: 18px;
         font-weight: 500;
+
+        img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
     }
 }
 
