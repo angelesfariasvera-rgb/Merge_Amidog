@@ -7,6 +7,7 @@ body {
 /* ===============================================
    1. BARRA DE NAVEGACIÓN
 ================================================ */
+
 .navbar {
     position: relative;
     z-index: 20;
@@ -49,7 +50,8 @@ body {
             border-radius: 10px;
             transition: all 0.2s ease;
 
-            &:hover, &.active {
+            &:hover,
+            &.active {
                 color: variables.$white;
                 background: variables.$teal-color;
             }
@@ -64,6 +66,7 @@ body {
 /* ===============================================
    2. FOOTER
 ================================================ */
+
 .footer {
     width: 100%;
     min-height: 72px;
@@ -71,7 +74,11 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 70px;
-    background: linear-gradient(90deg, variables.$primary-color 0%, #fe751f 100%);
+    background: linear-gradient(
+        90deg,
+        variables.$primary-color 0%,
+        #fe751f 100%
+    );
 
     .direccion {
         color: variables.$text-dark;
@@ -90,21 +97,36 @@ body {
 }
 
 /* ===============================================
-   RESPONSIVE - NAVBAR / FOOTER
+   RESPONSIVE
 ================================================ */
+
 @media screen and (max-width: variables.$bp-tablet) {
+
     .navbar {
         padding: 0 30px;
-        .logo { left: 20px; }
+
+        .logo {
+            left: 20px;
+        }
+    }
+
+    /* Kept from origin/main */
+    .footer {
+        padding: 10px 30px;
     }
 }
 
 @media screen and (max-width: variables.$bp-mobile) {
+
     .navbar {
         height: 85px;
         padding: 0 20px;
-        .links-nav { display: none; }
+
+        .links-nav {
+            display: none;
+        }
     }
+
     .footer {
         flex-direction: column;
         padding: 22px 20px;

@@ -5,7 +5,11 @@
 /* ===============================================
    CONFIGURACIÓN GENERAL
 ================================================ */
-* {
+
+/* Reset básico */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,4 +22,19 @@ html {
 body {
     min-width: 320px;
     font-family: variables.$font-family-base;
+}
+
+/* Element defaults */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
 }
