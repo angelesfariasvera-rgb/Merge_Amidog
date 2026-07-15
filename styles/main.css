@@ -1612,18 +1612,20 @@ body {
 }
 .animal-visual__star {
   position: absolute;
-  color: #FAD64A;
-  font-size: 1.8rem;
+  width: 28px;
+  height: auto;
   z-index: 3;
-  line-height: 1;
 }
 .animal-visual__star--top-left {
   top: 6px;
   left: -14px;
+  transform: rotate(-15deg);
 }
 .animal-visual__star--bottom-right {
   bottom: 12px;
   right: -14px;
+  width: 32px;
+  transform: rotate(20deg);
 }
 
 /*# sourceMappingURL=main.css.map */
