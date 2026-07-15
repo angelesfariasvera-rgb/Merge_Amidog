@@ -43,16 +43,6 @@ $border: #bce2df;
   background: linear-gradient(105deg, variables.$primary-color 0%, variables.$highlight-color 47%, variables.$secondary-color 100%);
   box-shadow: $shadow;
 
-  &::before {
-    content: "🐾";
-    position: absolute;
-    top: 2px;
-    left: 48px;
-    font-size: 2.1rem;
-    transform: rotate(-18deg);
-    filter: grayscale(1) brightness(0.45);
-  }
-
   &__tag {
     display: inline-flex;
     align-items: center;
@@ -78,10 +68,12 @@ $border: #bce2df;
     line-height: 1;
     letter-spacing: -0.04em;
 
-    span {
-      font-size: 1.7rem;
-      transform: translateY(-2px) rotate(10deg);
-      filter: grayscale(1) brightness(0.45);
+    .patita-contacto-title {
+      width: 34px;
+      height: auto;
+      transform: rotate(160deg);
+      margin-bottom: -4px;
+      filter: brightness(0.45);
     }
   }
 

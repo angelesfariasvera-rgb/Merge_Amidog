@@ -923,15 +923,6 @@ body {
   background: linear-gradient(105deg, #FFF1C0 0%, #FAD64A 47%, #F87823 100%);
   box-shadow: 0 18px 48px rgba(91, 61, 35, 0.12);
 }
-.contact-hero::before {
-  content: "🐾";
-  position: absolute;
-  top: 2px;
-  left: 48px;
-  font-size: 2.1rem;
-  transform: rotate(-18deg);
-  filter: grayscale(1) brightness(0.45);
-}
 .contact-hero__tag {
   display: inline-flex;
   align-items: center;
@@ -956,10 +947,12 @@ body {
   line-height: 1;
   letter-spacing: -0.04em;
 }
-.contact-hero__title span {
-  font-size: 1.7rem;
-  transform: translateY(-2px) rotate(10deg);
-  filter: grayscale(1) brightness(0.45);
+.contact-hero__title .patita-contacto-title {
+  width: 34px;
+  height: auto;
+  transform: rotate(160deg);
+  margin-bottom: -4px;
+  filter: brightness(0.45);
 }
 .contact-hero__layout {
   display: grid;
