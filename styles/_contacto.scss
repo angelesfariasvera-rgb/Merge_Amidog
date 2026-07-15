@@ -1,0 +1,70 @@
+@use "variables" as *;
+
+.contact-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 50px);
+  background: linear-gradient(135deg, rgba($primary, 0.9), rgba($secondary, 0.45));
+}
+
+.contact-hero {
+  position: relative;
+  width: min(100%, $container);
+  min-height: clamp(568px, 65vh, 680px);
+  padding: 22px 68px 20px;
+  overflow: hidden;
+  border-radius: $radius-lg;
+  background: linear-gradient(105deg, $primary 0%, $decoration 47%, $secondary 100%);
+  box-shadow: $shadow;
+
+  &::before {
+    content: "🐾";
+    position: absolute;
+    top: 2px;
+    left: 48px;
+    font-size: 2.1rem;
+    transform: rotate(-18deg);
+    filter: grayscale(1) brightness(0.45);
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 180px;
+    padding: 5px 20px;
+    margin-bottom: 8px;
+    border-radius: 999px;
+    color: $buttons;
+    background: rgba($white, 0.95);
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    margin: 0 0 16px;
+    font-size: clamp(2.35rem, 5vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+
+    span {
+      font-size: 1.7rem;
+      transform: translateY(-2px) rotate(10deg);
+      filter: grayscale(1) brightness(0.45);
+    }
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 350px) minmax(0, 1fr);
+    gap: clamp(44px, 7vw, 88px);
+    align-items: center;
+  }
+}
